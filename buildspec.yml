@@ -12,7 +12,7 @@ pre_build:
       - echo Build started on `date`
       - dotnet publish -c release -o ./build_output SampleCore.csproj
 artifacts:
-      files:
+  files:
     - CodeBuild-SampleCore/build_output/**/*
     - scripts/**/*
     - appspec.yml
