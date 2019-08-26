@@ -3,17 +3,16 @@ phases:
   install:
     runtime-versions:
      dotnet: 2.2
-  build:
-  pre_build:
+pre_build:
     commands:
       - echo Restore started on `date`
       - dotnet restore SampleCore.csproj
-  build:
+    build:
     commands:
       - echo Build started on `date`
       - dotnet publish -c release -o ./build_output SampleCore.csproj
 artifacts:
-  files:
+      files:
     - CodeBuild-SampleCore/build_output/**/*
     - scripts/**/*
     - appspec.yml
